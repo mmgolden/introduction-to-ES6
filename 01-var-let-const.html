@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Var, Let, and Const</title>
+</head>
+<body>
+<script>
+
+var score = 500;
+score = 600;
+console.log(score); // 600
+
+var name = 'Jeff';
+var name = 'Sarah';
+console.log(name); // Sarah
+
+/*
+function saySomething(string) {
+    var intro = 'Hello, '
+    console.log(intro + string); // Hello, world
+}
+
+saySomething('world');
+console.log(intro); // intro is not defined
+*/
+
+/*
+// ES5
+var birthYear = 1990;
+if (birthYear > 1900) {
+    var age = 2018 - birthYear;
+    console.log('You are ' + age + '!'); // You are 28!
+}
+console.log(age); // 28
+*/
+
+// ES6
+const birthYear = 1990;
+if (birthYear > 1900) {
+    let age = 2018 - birthYear;
+    console.log(`You are ${age}!`); // You are 28!
+}
+// console.log(age); // age is not defined
+
+const firstName = 'Melinda';
+let currentCity = 'Atlanta';
+
+currentCity = 'Asheville';
+console.log(currentCity); // Asheville
+
+/*
+let currentCity = 'Asheville';
+// Identifier 'currentCity' has already been declared
+
+firstName = 'Jamie'; // Assignment to constant variable
+const firstName = 'Melinda';
+// Identifier 'firstName' has already been declared
+*/
+
+const dog = {
+    breed: 'Bull Terrier',
+    age: 11
+}
+
+dog.age = 12;
+console.log(dog.age); // 12
+
+</script>
+</body>
+</html>

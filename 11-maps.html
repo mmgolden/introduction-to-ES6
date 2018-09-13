@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maps</title>
+</head>
+<body>
+<script>
+
+const dogs = new Map();
+dogs.set('Cypress', 12);
+dogs.set('Champ', 3);
+dogs.set('Grover', 5);
+console.log(dogs);
+// {"Cypress" => 12, "Champ" => 3, "Grover" => 5}
+
+dogs.has('Champ'); // true
+
+dogs.get('Grover'); // 5
+
+dogs.delete('Champ');
+console.log(dogs); 
+// {"Cypress" => 12, "Grover" => 5}
+
+</script>
+</body>
+</html>

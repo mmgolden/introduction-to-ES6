@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template Strings</title>
+</head>
+<body>
+<script>
+
+/*
+// ES5
+var firstName = 'Sam';
+var graduationYear = 2008;
+var sentence = 'My name is ' + firstName + ' and I graduated from college ' + (2018 - graduationYear) + ' years ago!';
+
+console.log(sentence); // My name is Sam and I graduated from college 10 years ago!
+*/
+
+// ES6
+const firstName = 'Sam';
+const graduationYear = 2008;
+const sentence = `My name is ${firstName} and I graduated from college ${2018 - graduationYear} years ago!`;
+
+console.log(sentence); // My name is Sam and I graduated from college 10 years ago!
+
+const beer = {
+    style: 'Berliner Weisse',
+    origin: 'Germany',
+    abv: 3.5,
+    taste: 'Sour and acidic with no hop bitterness'
+}
+
+/*
+// ES5
+var markup = ' \
+    <div class="beer"> \
+        <h1>' + beer.style + '</h1> \
+        <p>Origin: ' + beer.origin + '</p> \
+        <p>ABV: ' + beer.abv + '</p> \
+        <p>Taste: ' + beer.taste + '</p> \
+    </div> \
+';
+*/
+
+// ES6
+const markup = `
+    <div class="beer">
+        <h1>${beer.style}</h1>
+        <p>Origin: ${beer.origin}</p>
+        <p>ABV: ${beer.abv}</p>
+        <p>Taste: ${beer.taste}</p>
+    </div>
+`;
+
+console.log(markup);
+
+document.body.innerHTML = markup;
+
+    
+</script>
+</body>
+</html>

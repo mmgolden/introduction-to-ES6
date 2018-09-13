@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destructuring</title>
+</head>
+<body>
+<script>
+
+/*
+// ES5
+var car = {
+    make: 'Honda',
+    model: 'Civic',
+    year: 2012
+}
+
+var make = car.make;
+console.log(make); // Honda
+
+var model = car.model;
+console.log(model); // Civic
+*/
+
+// ES6
+const car = {
+    make: 'Honda',
+    model: 'Civic',
+    year: 2012
+}
+
+const { make, model } = car;
+
+console.log(make); // Honda
+console.log(model); // Civic
+
+const rescue = {
+    name: 'Furtastic Pet Rescue',
+    dog: {
+        name: 'Gunner',
+        details: {
+            breed: 'German Shepherd',
+            gender: 'male'
+        }
+    }
+}
+
+const { breed: dogBreed, adoptable = true } = rescue.dog.details;
+
+// const { dog: { details: { breed: dogBreed, adoptable = true } } } = rescue;
+
+console.log(dogBreed); // German Shepherd
+console.log(adoptable); // true
+
+/*
+// ES5
+var contact = ['info@test.com', '123 Main Street', '123-456-7890'];
+
+var email = contact[0];
+var address = contact[1];
+var phone = contact[2];
+
+console.log(email, address, phone);
+// info@test.com 123 Main Street 123-456-7890
+*/
+
+// ES6
+const contact = ['info@test.com', '123 Main Street', '123-456-7890'];
+
+const [email, address, phone] = contact;
+
+console.log(email, address, phone); 
+// info@test.com 123 Main Street 123-456-7890
+
+function convertCups(cups) {
+    const conversions = {
+        pints: cups / 2,
+        quarts: cups / 4,
+        gallons: cups / 16
+    }
+    return conversions;
+}
+
+const { pints, quarts, gallons } = convertCups(5);
+
+console.log(pints); // 2.5
+console.log(quarts); // 1.25
+console.log(gallons); // 0.3125
+
+</script>
+</body>
+</html>

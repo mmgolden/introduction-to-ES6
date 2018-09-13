@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spread and Rest</title>
+</head>
+<body>
+
+<div class="services">
+    <ul>
+        <li>Service 1</li>
+        <li>Service 2</li>
+        <li>Service 3</li>
+    </ul>
+</div>
+
+<script>
+
+// Spread
+const string = [...'hello'];
+console.log(string); // ["h", "e", "l", "l", "o"]
+
+const shoppingList1 = ['milk', 'eggs', 'bread'];
+const shoppingList2 = ['bananas', 'yogurt', 'cereal'];
+
+const combinedList1 = shoppingList1.concat(shoppingList2);
+console.log(combinedList1); // ["milk", "eggs", "bread", "bananas", "yogurt", "cereal"]
+
+const combinedList2 = [...shoppingList1, ...shoppingList2];
+console.log(combinedList2); // ["milk", "eggs", "bread", "bananas", "yogurt", "cereal"]
+
+const newShoppingList = [...shoppingList1, 'zucchini', ...shoppingList2];
+console.log(newShoppingList); // ["milk", "eggs", "bread", "zucchini", "bananas", "yogurt", "cereal"]
+
+const services1 = Array.from(document.querySelectorAll('.services ul li'));
+console.log(services1); // [li, li, li]
+
+const services2 = [...document.querySelectorAll('.services ul li')];
+console.log(services2); // [li, li, li]
+
+
+// Rest
+const northCarolinaCities = ['Raleigh', 'Asheville', 'Charlotte', 'Wilmington'];
+
+const [capital, ...cities] = northCarolinaCities;
+console.log(capital, cities); // Raleigh ["Asheville", "Charlotte", "Wilmington"]
+
+function calculateTotal(tax = 0.07, ...items) {
+    console.log(items); // [9.99, 14.99, 5.99]
+    const itemsWithTax = items.map(item => Math.round((item * tax + item) * 100) / 100);
+    return itemsWithTax.reduce((total, amount) => total + amount);
+}
+
+const total = calculateTotal(undefined, 9.99, 14.99, 5.99);
+console.log(total); // 33.14
+
+</script>
+</body>
+</html>

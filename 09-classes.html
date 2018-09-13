@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classes</title>
+</head>
+<body>
+<script>
+
+// Class declaration
+class Person {
+    constructor(name, job) {
+        this.name = name;
+        this.job = job;
+    }
+}
+
+/*
+// Class expression
+const Person = class {
+    constructor(name, job) {
+        this.name = name;
+        this.job = job;
+    }
+};
+*/
+
+/*
+class Animal {
+    constructor(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    // Method
+    makeSound() {
+        console.log(this.sound);
+    }
+}
+
+const cow = new Animal('cow', 'moo');
+cow.makeSound(); // moo
+*/
+
+class Animal {
+    constructor(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    // Getter
+    get species() {
+        return this._species;
+    }
+    // Setter
+    set species(species) {
+        this._species = species;
+    }
+}
+
+const cow = new Animal('cow', 'moo');
+cow.species = 'Bos taurus';
+console.log(cow.species); // Bos taurus
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Methods</title>
+</head>
+<body>
+<script>
+
+const array1 = Array.from('dog');
+console.log(array1); // ["d", "o", "g"]
+
+const array2 = Array.of(1, 2, 3, 4);
+console.log(array2); // [1, 2, 3, 4]
+
+const ages = [12, 16, 17, 25, 14];
+const adult = ages.find(age => age > 18);
+console.log(adult); // 25
+
+const dogs = ['pug', 'corgie', 'beagle', 'lab'];
+const index = dogs.findIndex(breed => breed === 'lab');
+console.log(index); // 3
+
+</script>
+</body>
+</html>

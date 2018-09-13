@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sets</title>
+</head>
+<body>
+<script>
+
+const people = new Set();
+people.add('Chris');
+people.add('James');
+people.add('Sam');
+
+console.log(people); // {"Chris", "James", "Sam"}
+
+people.has('Chris'); // true
+
+people.delete('Sam');
+console.log(people); // {"Chris", "James"}
+
+people.clear(people);
+console.log(people); // {}
+
+</script>
+</body>
+</html>

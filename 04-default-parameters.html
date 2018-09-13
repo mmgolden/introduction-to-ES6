@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Default Function Arguments</title>
+</head>
+<body>
+<script>
+
+/*
+// ES5
+function calculateArea(width, length) {
+    if (width === undefined) {
+        width = 5;
+    }
+    if (length === undefined) {
+        length = 10;
+    }
+    return width * length;
+}
+*/
+
+// ES6
+function calculateArea(width = 5, length = 10) {
+    return width * length;
+}
+
+const area = calculateArea();
+console.log(area); // 50
+
+</script>
+</body>
+</html>
